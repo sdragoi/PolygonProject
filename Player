@@ -1,4 +1,9 @@
 package application;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.Properties;
+
 //JM MS
 //APCS
 //Player class
@@ -12,8 +17,23 @@ import javafx.scene.shape.Polygon;
 public class Player extends ShapeClass {
     public double interiorAngle;
     
-    public Player (double interiorAngle, int x, int y) {
-    	setImage(getImage("//Users/stellaaldi/Desktop/PolygonProjectImages/tri.png"));
+    public Player (double interiorAngle) {
+    	Properties prop = new Properties();
+    	try {
+    		FileInputStream input = new FileInputStream("resources/config.properties");
+    		prop.load(input);
+    	} catch (FileNotFoundException e) {
+    		// TODO Auto-generated catch block
+    		e.printStackTrace();
+    	} catch (IOException e) {
+    		// TODO Auto-generated catch block
+    		e.printStackTrace();
+    	}
+    	
+    	if (interiorAngle == 128.57)
+    		setImage(getImage(prop.getProperty(128.57 + "")));
+    	else
+    		setImage(getImage(prop.getProperty(((int)interiorAngle) + "")));
     	this.toFront();
     	this.interiorAngle = interiorAngle;
     
@@ -26,8 +46,156 @@ public class Player extends ShapeClass {
         hitBox.height = image.getHeight();
     }*/
     
-    public void changeAngle(double newAngle) {
+    public double changeAngle(double newAngle) {
     	interiorAngle = newAngle;
+    	return interiorAngle;
+    }
+    
+    public double getnewAngle(double newAngle) {
+    	Properties prop = new Properties();
+    	try {
+    		FileInputStream input = new FileInputStream("resources/config.properties");
+    		prop.load(input);
+    	} catch (FileNotFoundException e) {
+    		// TODO Auto-generated catch block
+    		e.printStackTrace();
+    	} catch (IOException e) {
+    		// TODO Auto-generated catch block
+    		e.printStackTrace();
+    	}
+    	
+    	if (newAngle == 60) {
+    		return 60;
+        }
+        if(newAngle < 60) {
+            return 0;
+        }
+        else if(newAngle < 90) {
+        	
+        	return 90;
+        
+        }
+        else if(newAngle < 108) {
+        	
+        	return 108;
+        }
+        else if(newAngle < 120) {
+        	
+        	return 120;
+        }
+        else if(newAngle < 128.57) {
+        	return 128.57;
+        }
+        else if(newAngle < 135) {
+        	return 135;
+        }
+        else if(newAngle < 140) {
+        	return 140;
+        }
+        else if(newAngle < 144) {
+        	return 144;
+        }
+        else {
+        	return 0;
+        }
+        
+    	
+    	/*if (newAngle == 60) {
+    		setImage(null);
+    		setImage(getImage(prop.getProperty((int)60 + "")));
+        }
+        if(newAngle < 60) {
+            this.setImage(getImage(prop.getProperty((int)0 + "")));
+        }
+        else if(newAngle < 90) {
+        	
+        	this.setImage(getImage(prop.getProperty((int)90 + "")));
+        
+        }
+        else if(newAngle < 108) {
+        	
+        	this.setImage(getImage(prop.getProperty((int)108 + "")));
+        }
+        else if(newAngle < 120) {
+        	
+        	this.setImage(getImage(prop.getProperty((int)120 + "")));
+        }
+        else if(newAngle < 128.57) {
+        	this.setImage(getImage(prop.getProperty(128.57 + "")));
+        }
+        else if(newAngle < 135) {
+        	this.setImage(getImage(prop.getProperty((int)135 + "")));
+        }
+        else if(newAngle < 140) {
+        	this.setImage(getImage(prop.getProperty((int)140 + "")));
+        }
+        else if(newAngle < 144) {
+        	this.setImage(getImage(prop.getProperty((int)144 + "")));
+        }
+        else {
+        	
+        }
+        */
+  
+    	
+    }
+    
+    public Image changeImage(double newAngle) {
+    	Properties prop = new Properties();
+    	try {
+    		FileInputStream input = new FileInputStream("resources/config.properties");
+    		prop.load(input);
+    	} catch (FileNotFoundException e) {
+    		// TODO Auto-generated catch block
+    		e.printStackTrace();
+    	} catch (IOException e) {
+    		// TODO Auto-generated catch block
+    		e.printStackTrace();
+    	}
+    	
+    	if (newAngle == 60) {
+    		setImage(getImage(prop.getProperty((int)60 + "")));
+    		return getImage(prop.getProperty((int)60 + ""));
+        }
+        if(newAngle < 60) {
+            this.setImage(getImage(prop.getProperty((int)0 + "")));
+            return null;
+        }
+        else if(newAngle <= 90) {
+        	this.setImage(getImage(prop.getProperty((int)90 + "")));
+        	return getImage(prop.getProperty((int)90 + ""));
+        
+        }
+        else if(newAngle <=108) {
+        	
+        	this.setImage(getImage(prop.getProperty((int)108 + "")));
+        	return getImage(prop.getProperty((int)108 + ""));
+        }
+        else if(newAngle <= 120) {
+        	
+        	this.setImage(getImage(prop.getProperty((int)120 + "")));
+        	return getImage(prop.getProperty((int)120 + ""));
+        }
+        else if(newAngle <= 128.57) {
+        	this.setImage(getImage(prop.getProperty(128.57 + "")));
+        	return getImage(prop.getProperty(128.57 + ""));
+        }
+        else if(newAngle <= 135) {
+        	this.setImage(getImage(prop.getProperty((int)135 + "")));
+        	return getImage(prop.getProperty((int)135 + ""));
+        }
+        else if(newAngle <= 140) {
+        	this.setImage(getImage(prop.getProperty((int)140 + "")));
+        	return getImage(prop.getProperty((int)140 + ""));
+        }
+        else if(newAngle <= 144) {
+        	this.setImage(getImage(prop.getProperty((int)144 + "")));
+        	return getImage(prop.getProperty((int)144 + ""));
+        }
+        else {
+        	return getImage(prop.getProperty((int)60 + ""));
+        }
+    	
     }
 
     //Finds if a shape and a player overlaps, very basic collision testing.
