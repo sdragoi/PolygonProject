@@ -1,4 +1,4 @@
-package application;
+ackage application;
 //JM MS
 //Main runtime class
 //APCS
@@ -58,7 +58,7 @@ public class Main extends Application {
 		lblMissed.setLayoutY(10);
 		missed = 0;
  
-		speed = 1;
+		speed = 0.5;
 		falling = 500;
 		
 		Canvas canvas = new Canvas(545,600);
@@ -81,7 +81,6 @@ public class Main extends Application {
 			@Override
 			public void handle(long arg0) {
 				cont.setLayoutX(mouseX);
-				cont.setLayoutY(550);
 				
 				 
 				 
@@ -109,7 +108,7 @@ public class Main extends Application {
 		};
 		timer.start();	
  
-		cont = new Player(60, 200, 550);
+		cont = new Player(60);
 		//cont.render(context);
 		
 		
