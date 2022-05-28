@@ -1,0 +1,37 @@
+package application;
+//JM MS
+//APCS
+//Player class
+//5/23/2022
+import javafx.animation.AnimationTimer;
+import javafx.event.ActionEvent;
+import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.image.Image;
+import javafx.scene.shape.Polygon;
+
+public class Player extends ShapeClass {
+    public double interiorAngle;
+    
+    public Player (double interiorAngle, int x, int y) {
+    	setImage(getImage("//Users/stellaaldi/Desktop/PolygonProjectImages/tri.png"));
+    	this.toFront();
+    	this.interiorAngle = interiorAngle;
+    
+    }
+    
+
+    /*public void setImage(String filename) {
+        image = new Image("file://" + filename, 150, 180, false, false);
+        hitBox.width = image.getWidth();
+        hitBox.height = image.getHeight();
+    }*/
+    
+    public void changeAngle(double newAngle) {
+    	interiorAngle = newAngle;
+    }
+
+    //Finds if a shape and a player overlaps, very basic collision testing.
+    public boolean overlaps (ShapeClass shape) {
+        return this.getHitBox().overlaps(shape.getHitBox());
+    }
+}
