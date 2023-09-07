@@ -1,10 +1,9 @@
-//JM MS
-//APCS Final project
-//Use Vectors for positioning
-//5/23/2022
-package application;
+// Vector Class
+// Aimed Completion Date: May 23, 2022
 
-//vector class is used to determine position and velocity of a shape
+package com.example.polyproj;
+
+// Vector class is used to determine position and velocity of a shape
 public class Vector {
     double x;
     double y;
@@ -21,17 +20,17 @@ public class Vector {
         this.y = y;
     }
 
-
     public void add (double dx, double dy) {
         this.x += dx;
         this.y += dy;
     }
 
-    //Vector addition
+    // Vector addition
     public void add (Vector Vec) {
         this.add(Vec.x, Vec.y);
     }
-    //scalar multiplication
+    
+    // Scalar multiplication
     public void scalarMult (double n) {
         this.x *= n;
         this.y *=n;
