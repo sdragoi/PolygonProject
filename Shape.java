@@ -21,35 +21,35 @@ public class Shape {
         switch(shapeType) {
             case 1:
                 interiorAngle = 60;
-                setImage("C:\\Users\\julma\\IdeaProjects\\demo\\APCSFinalProj\\src\\tri.jpg");
+                setImage("C:\\Users\\julma\\IdeaProjects\\demo\\PolyProj\\src\\tri.jpg");
                 break;
             case 2:
                 interiorAngle = 90;
-                setImage("C:\\Users\\julma\\IdeaProjects\\demo\\APCSFinalProj\\src\\square.png");
+                setImage("C:\\Users\\julma\\IdeaProjects\\demo\\PolyProj\\src\\square.png");
                 break;
             case 3:
                 interiorAngle = 108;
-                setImage("C:\\Users\\julma\\IdeaProjects\\demo\\APCSFinalProj\\src\\pentagon.jpg");
+                setImage("C:\\Users\\julma\\IdeaProjects\\demo\\PolyProj\\src\\pentagon.jpg");
                 break;
             case 4:
                 interiorAngle = 120;
-                setImage("C:\\Users\\julma\\IdeaProjects\\demo\\APCSFinalProj\\src\\hexagonRe.png");
+                setImage("C:\\Users\\julma\\IdeaProjects\\demo\\PolyProj\\src\\hexagonRe.png");
                 break;
             case 5:
                 interiorAngle = 128.57;
-                setImage("C:\\Users\\julma\\IdeaProjects\\demo\\APCSFinalProj\\src\\heptagon.jpg");
+                setImage("C:\\Users\\julma\\IdeaProjects\\demo\\PolyProj\\src\\heptagon.jpg");
                 break;
             case 6:
                 interiorAngle = 135;
-                setImage("C:\\Users\\julma\\IdeaProjects\\demo\\APCSFinalProj\\src\\octogon.png");
+                setImage("C:\\Users\\julma\\IdeaProjects\\demo\\PolyProj\\src\\octogon.png");
                 break;
             case 7:
                 interiorAngle = 140;
-                setImage("C:\\Users\\julma\\IdeaProjects\\demo\\APCSFinalProj\\src\\nongon.png");
+                setImage("C:\\Users\\julma\\IdeaProjects\\demo\\PolyProj\\src\\nongon.png");
                 break;
             case 8:
                 interiorAngle = 144;
-                setImage("C:\\Users\\julma\\IdeaProjects\\demo\\APCSFinalProj\\src\\decagon.jpg");
+                setImage("C:\\Users\\julma\\IdeaProjects\\demo\\PolyProj\\src\\decagon.jpg");
                 break;
         }
     }
@@ -77,7 +77,8 @@ public class Shape {
         hitBox.y = position.y;
         return hitBox;
     }
-    //Renders Shape
+    
+    // Renders Shape
     public void render (GraphicsContext context) {
         context.drawImage(image, position.x, position.y);
     }
