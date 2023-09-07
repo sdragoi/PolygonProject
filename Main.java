@@ -1,5 +1,5 @@
 // Main Class
-// Date: May 23, 2022
+// Aimed Completion Date: May 23, 2022
 
 package com.example.polyproj;
 import javafx.animation.AnimationTimer;
