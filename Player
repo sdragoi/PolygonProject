@@ -1,13 +1,11 @@
+// Player Class 
+// May 23, 2022 
+
 package application;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Properties;
-
-//JM MS
-//APCS
-//Player class
-//5/23/2022
 import javafx.animation.AnimationTimer;
 import javafx.event.ActionEvent;
 import javafx.scene.canvas.GraphicsContext;
@@ -38,13 +36,6 @@ public class Player extends ShapeClass {
     	this.interiorAngle = interiorAngle;
     
     }
-    
-
-    /*public void setImage(String filename) {
-        image = new Image("file://" + filename, 150, 180, false, false);
-        hitBox.width = image.getWidth();
-        hitBox.height = image.getHeight();
-    }*/
     
     public double changeAngle(double newAngle) {
     	interiorAngle = newAngle;
@@ -98,46 +89,6 @@ public class Player extends ShapeClass {
         else {
         	return 0;
         }
-        
-    	
-    	/*if (newAngle == 60) {
-    		setImage(null);
-    		setImage(getImage(prop.getProperty((int)60 + "")));
-        }
-        if(newAngle < 60) {
-            this.setImage(getImage(prop.getProperty((int)0 + "")));
-        }
-        else if(newAngle < 90) {
-        	
-        	this.setImage(getImage(prop.getProperty((int)90 + "")));
-        
-        }
-        else if(newAngle < 108) {
-        	
-        	this.setImage(getImage(prop.getProperty((int)108 + "")));
-        }
-        else if(newAngle < 120) {
-        	
-        	this.setImage(getImage(prop.getProperty((int)120 + "")));
-        }
-        else if(newAngle < 128.57) {
-        	this.setImage(getImage(prop.getProperty(128.57 + "")));
-        }
-        else if(newAngle < 135) {
-        	this.setImage(getImage(prop.getProperty((int)135 + "")));
-        }
-        else if(newAngle < 140) {
-        	this.setImage(getImage(prop.getProperty((int)140 + "")));
-        }
-        else if(newAngle < 144) {
-        	this.setImage(getImage(prop.getProperty((int)144 + "")));
-        }
-        else {
-        	
-        }
-        */
-  
-    	
     }
     
     public Image changeImage(double newAngle) {
@@ -198,7 +149,7 @@ public class Player extends ShapeClass {
     	
     }
 
-    //Finds if a shape and a player overlaps, very basic collision testing.
+    // Determines whether a shape and a player overlap: basic collision testing
     public boolean overlaps (ShapeClass shape) {
         return this.getHitBox().overlaps(shape.getHitBox());
     }
