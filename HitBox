@@ -1,8 +1,6 @@
-//JM MS
-//APCS Final project
-//Hitbox class
-//class will be used for collision detection
-//5/23/2022
+// HitBox Class: Used for collision detection
+// May 23, 2022 
+
 package application;
 public class HitBox {
 
